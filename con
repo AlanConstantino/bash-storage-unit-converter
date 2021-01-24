@@ -1,0 +1,314 @@
+#!/usr/bin/env bash
+
+# $1 is the number to be converted
+# $2 is the unit of measurement to convert to
+function bit_conversion {
+    case $2 in
+        B)  echo "$1/8" | bc -l;;                # Byte
+        Gb) echo "$1/1073741824" | bc -l;;       # Gigabit
+        GB) echo "$1/8589934592" | bc -l;;       # Gigabyte
+        Kb) echo "$1/1024" | bc -l;;             # Kilobit
+        KB) echo "$1/8192" | bc -l;;             # Kilobyte
+        Mb) echo "$1/1048576" | bc -l;;          # Megabit
+        MB) echo "$1/8388608" | bc -l;;          # Megabyte
+        Pb) echo "$1/1125899906842620" | bc -l;; # Petabit
+        PB) echo "$1/9007199254740990" | bc -l;; # Petabyte
+        Tb) echo "$1/1099511627776" | bc -l;;    # Terabit
+        TB) echo "$1/8796093022208" | bc -l;;    # Terabyte
+        *)  echo "Error: Unit '$2' is not valid!"
+    esac
+}
+
+
+# $1 is the number to be converted
+# $2 is the unit of measurement to convert to
+function kilobit_conversion {
+    case $2 in
+        b)  echo "$1*1024" | bc -l;;          # Bit
+        B)  echo "$1*128" | bc -l;;           # Byte
+        Gb) echo "$1/1048576" | bc -l;;       # Gigabit
+        GB) echo "$1/8388608" | bc -l;;       # Gigabyte
+        KB) echo "$1/8" | bc -l;;             # Kilobyte
+        Mb) echo "$1/1024" | bc -l;;          # Megabit
+        MB) echo "$1/8192" | bc -l;;          # Megabyte
+        Pb) echo "$1/1099511627776" | bc -l;; # Petabit
+        PB) echo "$1/8796093022208" | bc -l;; # Petabyte
+        Tb) echo "$1/1073741824" | bc -l;;    # Terabit
+        TB) echo "$1/8589934592" | bc -l;;    # Terabyte
+        *)  echo "Error: Unit '$2' is not valid!"
+    esac
+}
+
+
+# $1 is the number to be converted
+# $2 is the unit of measurement to convert to
+function megabit_conversion {
+    case $2 in
+        b)  echo "$1*1048576" | bc -l;;    # Bit
+        B)  echo "$1*131072" | bc -l;;     # Byte
+        Gb) echo "$1/1024" | bc -l;;       # Gigabit
+        GB) echo "$1/8192" | bc -l;;       # Gigabyte
+        Kb) echo "$1*1024" | bc -l;;       # Kilobit
+        KB) echo "$1*128" | bc -l;;        # Kilobyte
+        MB) echo "$1/8" | bc -l;;          # Megabyte
+        Pb) echo "$1/1073741824" | bc -l;; # Petabit
+        PB) echo "$1/8589934592" | bc -l;; # Petabyte
+        Tb) echo "$1/1048576" | bc -l;;    # Terabit
+        TB) echo "$1/8388608" | bc -l;;    # Terabyte
+        *)  echo "Error: Unit '$2' is not valid!"
+    esac
+}
+
+
+# $1 is the number to be converted
+# $2 is the unit of measurement to convert to
+function gigabit_conversion {
+    case $2 in
+        b)  echo "$1*1073741824" | bc -l;; # Bit
+        B)  echo "$1*134217728" | bc -l;;  # Byte
+        GB) echo "$1/8" | bc -l;;          # Gigabyte
+        Kb) echo "$1*1048576" | bc -l;;    # Kilobit
+        KB) echo "$1*131072" | bc -l;;     # Kilobyte
+        Mb) echo "$1*1024" | bc -l;;       # Megabit
+        MB) echo "$1*128" | bc -l;;        # Megabyte
+        Pb) echo "$1/1048576" | bc -l;;    # Petabit
+        PB) echo "$1/8388608" | bc -l;;    # Petabyte
+        Tb) echo "$1/1024" | bc -l;;       # Terabit
+        TB) echo "$1/8192" | bc -l;;       # Terabyte
+        *)  echo "Error: Unit '$2' is not valid!"
+    esac
+}
+
+
+# $1 is the number to be converted
+# $2 is the unit of measurement to convert to
+function terabit_conversion {
+    case $2 in
+        b)  echo "$1*1099511627776" | bc -l;; # Bit
+        B)  echo "$1*137438953472" | bc -l;;  # Byte
+        Gb) echo "$1*1024" | bc -l;;          # Gigabit
+        GB) echo "$1*128" | bc -l;;           # Gigabyte
+        Kb) echo "$1*1073741824" | bc -l;;    # Kilobit
+        KB) echo "$1*134217728" | bc -l;;     # Kilobyte
+        Mb) echo "$1*1048576" | bc -l;;       # Megabit
+        MB) echo "$1*131072" | bc -l;;        # Megabyte
+        Pb) echo "$1/1024" | bc -l;;          # Petabit
+        PB) echo "$1/8192" | bc -l;;          # Petabyte
+        TB) echo "$1/8" | bc -l;;             # Terabyte
+        *)  echo "Error: Unit '$2' is not valid!"
+    esac
+}
+
+
+# $1 is the number to be converted
+# $2 is the unit of measurement to convert to
+function petabit_conversion {
+    case $2 in
+        b)  echo "$1*1125899906842620" | bc -l;; # Bit
+        B)  echo "$1*140737488355328" | bc -l;;  # Byte
+        Gb) echo "$1*1048576" | bc -l;;          # Gigabit
+        GB) echo "$1*131072" | bc -l;;           # Gigabyte
+        Kb) echo "$1*1099511627776" | bc -l;;    # Kilobit
+        KB) echo "$1*137438953472" | bc -l;;     # Kilobyte
+        Mb) echo "$1*1073741824" | bc -l;;       # Megabit
+        MB) echo "$1*134217728" | bc -l;;        # Megabyte
+        PB) echo "$1/8" | bc -l;;                # Petabyte
+        Tb) echo "$1*1024" | bc -l;;             # Terabit
+        TB) echo "$1*128" | bc -l;;              # Terabyte
+        *)  echo "Error: Unit '$2' is not valid!"
+    esac
+}
+
+
+# $1 is the number to be converted
+# $2 is the unit of measurement to convert to
+function byte_conversion {
+    case $2 in
+        b)  echo "$1*8" | bc -l;;                # Bit
+        Gb) echo "$1/134217728" | bc -l;;        # Gigabit
+        GB) echo "$1/1073741824" | bc -l;;       # Gigabyte
+        Kb) echo "$1/128" | bc -l;;              # Kilobit
+        KB) echo "$1/1024" | bc -l;;             # Kilobyte
+        Mb) echo "$1/131072" | bc -l;;           # Megabit
+        MB) echo "$1/1048576" | bc -l;;          # Megabyte
+        Pb) echo "$1/140737488355328" | bc -l;;  # Petabit
+        PB) echo "$1/1125899906842620" | bc -l;; # Petabyte
+        Tb) echo "$1/137438953472" | bc -l;;     # Terabit
+        TB) echo "$1/1099511627776" | bc -l;;    # Terabyte
+        *)  echo "Error: Unit '$2' is not valid!"
+    esac
+}
+
+
+# $1 is the number to be converted
+# $2 is the unit of measurement to convert to
+function kilobyte_conversion {
+    case $2 in
+        b)  echo "$1*8192" | bc -l;;          # Bit
+        B)  echo "$1*1024" | bc -l;;          # Byte
+        Gb) echo "$1/131072" | bc -l;;        # Gigabit
+        GB) echo "$1/1048576" | bc -l;;       # Gigabyte
+        Kb) echo "$1*8" | bc -l;;             # Kilobit
+        Mb) echo "$1/128" | bc -l;;           # Megabit
+        MB) echo "$1/1024" | bc -l;;          # Megabyte
+        Pb) echo "$1/137438953472" | bc -l;;  # Petabit
+        PB) echo "$1/1099511627776" | bc -l;; # Petabyte
+        Tb) echo "$1/134217728" | bc -l;;     # Terabit
+        TB) echo "$1/1073741824" | bc -l;;    # Terabyte
+        *)  echo "Error: Unit '$2' is not valid!"
+    esac
+}
+
+
+# $1 is the number to be converted
+# $2 is the unit of measurement to convert to
+function megabyte_conversion {
+    case $2 in
+        b)  echo "$1*8388608" | bc -l;;    # Bit
+        B)  echo "$1*1048576" | bc -l;;    # Byte
+        Gb) echo "$1/128" | bc -l;;        # Gigabit
+        GB) echo "$1/1024" | bc -l;;       # Gigabyte
+        Kb) echo "$1/8192" | bc -l;;       # Kilobit
+        KB) echo "$1*1024" | bc -l;;       # Kilobyte
+        Mb) echo "$1*8" | bc -l;;          # Megabit
+        Pb) echo "$1/134217728" | bc -l;;  # Petabit
+        PB) echo "$1/1073741824" | bc -l;; # Petabyte
+        Tb) echo "$1/131072" | bc -l;;     # Terabit
+        TB) echo "$1/1048576" | bc -l;;    # Terabyte
+        *)  echo "Error: Unit '$2' is not valid!"
+    esac
+}
+
+
+# $1 is the number to be converted
+# $2 is the unit of measurement to convert to
+function gigabyte_conversion {
+    case $2 in
+        b)  echo "$1*8589934592" | bc -l;; # bit
+        B)  echo "$1*1073741824" | bc -l;; # Byte
+        Gb) echo "$1*8" | bc -l;;          # Gigabit
+        Kb) echo "$1*8388608" | bc -l;;    # Kilobit
+        KB) echo "$1*1048576" | bc -l;;    # Kilobyte
+        Mb) echo "$1*8192" | bc -l;;       # Megabit
+        MB) echo "$1*1024" | bc -l;;       # Megabyte
+        Pb) echo "$1/131072" | bc -l;;     # Petabit
+        PB) echo "$1/1048576" | bc -l;;    # Petabyte
+        Tb) echo "$1/128" | bc -l;;        # Terabit
+        TB) echo "$1/1024" | bc -l;;       # Terabyte
+        *)  echo "Error: Unit '$2' is not valid!"       
+    esac
+}
+
+
+# $1 is the number to be converted
+# $2 is the unit of measurement to convert to
+function terabyte_conversion {
+    case $2 in
+        b)  echo "$1*8796093022208" | bc -l;; # Bit
+        B)  echo "$1*1099511627776" | bc -l;; # Byte
+        Gb) echo "$1*8192" | bc -l;;          # Gigabit
+        GB) echo "$1*1024" | bc -l;;          # Gigabyte
+        Kb) echo "$1*8589934592" | bc -l;;    # Kilobit
+        KB) echo "$1*1073741824" | bc -l;;    # Kilobyte
+        Mb) echo "$1*8388608" | bc -l;;       # Megabit
+        MB) echo "$1*1048576" | bc -l;;       # Megabyte
+        Pb) echo "$1/128" | bc -l;;           # Petabit
+        PB) echo "$1/1024" | bc -l;;          # Petabyte
+        Tb) echo "$1*8" | bc -l;;             # Terabit
+        *)  echo "Error: Unit '$2' is not valid!"
+    esac
+}
+
+
+# $1 is the number to be converted
+# $2 is the unit of measurement to convert to
+function petabyte_conversion {
+    case $2 in
+        b)  echo "$1*9007199254740990" | bc -l;; # Bit
+        B)  echo "$1*1125899906842620" | bc -l;; # Byte
+        Gb) echo "$1*8388608" | bc -l;;          # Gigabit
+        GB) echo "$1*1048576" | bc -l;;          # Gigabyte
+        Kb) echo "$1*8796093022208" | bc -l;;    # Kilobit
+        KB) echo "$1*1099511627776" | bc -l;;    # Kilobyte
+        Mb) echo "$1*8589934592" | bc -l;;       # Megabit
+        MB) echo "$1*1073741824" | bc -l;;       # Megabyte
+        Pb) echo "$1*8" | bc -l;;                # Petabit
+        Tb) echo "$1*8192" | bc -l;;             # Terabit
+        TB) echo "$1*1024" | bc -l;;             # Terabyte
+        *)  echo "Error: Unit '$2' is not valid!"
+    esac
+}
+
+
+# takes in no parameters
+function help {
+    echo "NAME
+        con - convert storage units into other storage units
+
+SYNOPSIS
+        con [number] [unit #1] [unit #2]
+
+        [number]  - number to convert
+        [unit #1] - the original unit
+        [unit #2] - the unit to convert to
+
+UNITS
+        b  - bits
+        B  - bytes
+        Gb - Gigabit
+        GB - Gigabyte
+        Kb - Kilobit
+        KB - Kilobyte
+        Mb - Megabit
+        MB - Megabyte
+        Pb - Petabit
+        PB - Petabyte
+        Tb - Terabit
+        TB - Terabyte
+
+EXAMPLES
+        con 5 Mb b
+                Converts 5 Megabits (Mb) to bits (b)
+
+        con 1.5 TB GB
+                Converts 1.5 Terabytes (TB) to Gigabytes (GB)
+
+        con 500 Gb KB
+                Converts 500 Gigabits (Gb) to Kilobytes (KB)
+
+        con h
+                Brings up the help menu"
+}
+
+
+#################
+##### START #####
+#################
+
+if [[ $# -eq 0 || $1 = h* ]]; then
+    help
+else
+    if [[ -z $2 ]]; then
+        echo "Error: Did not specify a unit!" && exit
+    fi
+
+    if [[ -z $3 ]]; then
+        echo "Error: Did not specify a unit to convert to!" && exit
+    fi
+
+    case $2 in
+        b)  bit_conversion $1 $3;;
+        B)  byte_conversion $1 $3;;
+        Kb) kilobit_conversion $1 $3;;
+        KB) kilobyte_conversion $1 $3;;
+        Mb) megabit_conversion $1 $3;;
+        MB) megabyte_conversion $1 $3;;
+        Gb) gigabit_conversion $1 $3;;
+        GB) gigabyte_conversion $1 $3;;
+        Tb) terabit_conversion $1 $3;;
+        TB) terabyte_conversion $1 $3;;
+        Pb) petabit_conversion $1 $3;;
+        PB) petabyte_conversion $1 $3;;
+        *)  echo "Error: Not valid command usage."
+    esac
+fi
