@@ -49,7 +49,7 @@ function megabit_conversion {
         b)  echo "$1*1048576" | bc -l;;      # Bit
         B)  echo "$1*131072" | bc -l;;       # Byte
         Gb) echo "$1/1024" | bc -l;;         # Gigabit
-        GiB) echo "$1*8589.934592" | bc -l;; # Gibibyte
+        GiB) echo "$1/8589.934592" | bc -l;; # Gibibyte
         GB) echo "$1/8192" | bc -l;;         # Gigabyte
         Kb) echo "$1*1024" | bc -l;;         # Kilobit
         KB) echo "$1*128" | bc -l;;          # Kilobyte
