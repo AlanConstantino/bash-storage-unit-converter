@@ -253,18 +253,19 @@ SYNOPSIS
         [unit #2] - the unit to convert to
 
 UNITS
-        b  - bits
-        B  - bytes
-        Gb - Gigabit
-        GB - Gigabyte
-        Kb - Kilobit
-        KB - Kilobyte
-        Mb - Megabit
-        MB - Megabyte
-        Pb - Petabit
-        PB - Petabyte
-        Tb - Terabit
-        TB - Terabyte
+        b   - bits
+        B   - bytes
+        Gb  - Gigabit
+        GiB - Gibibyte
+        GB  - Gigabyte
+        Kb  - Kilobit
+        KB  - Kilobyte
+        Mb  - Megabit
+        MB  - Megabyte
+        Pb  - Petabit
+        PB  - Petabyte
+        Tb  - Terabit
+        TB  - Terabyte
 
 EXAMPLES
         con 5 Mb b
